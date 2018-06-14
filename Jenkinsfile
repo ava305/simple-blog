@@ -20,6 +20,23 @@ pipeline {
         sh 'echo "hello world!"'
       }
     }
+    stage('Deploy - Staging'){
+        steps {
+            sh 'echo deploy staging'
+        }
+    }
+
+    stage('Sanity check'){
+            steps {
+                input 'Does the staging environment look ok?'
+            }
+    }
+    stage('Deploy - Production'){
+
+        steps {
+            sh 'echo production deploy'
+        }
+    }
   }
   post {
     always {
