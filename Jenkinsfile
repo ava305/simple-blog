@@ -11,6 +11,8 @@ pipeline {
         TEST_ACCOUNT = credentials('test_account')
       }
       steps {
+
+        sh 'mvn test'
         sh 'node --version'
         sh 'echo $TEST_ACCOUNT'
         sh 'echo $TEST_ACCOUNT_USR'
