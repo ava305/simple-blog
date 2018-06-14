@@ -17,7 +17,9 @@ pipeline {
    agent { docker { image 'node:7-alpine' } }
    stages {
       stage('Build'){
-         sh 'mvn clean package'
+         steps {
+             sh 'mvn clean package'
+         }
       }
       stage('Test') {
          environment {
