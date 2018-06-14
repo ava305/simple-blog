@@ -27,10 +27,15 @@ pipeline {
       archiveArtifacts 'target/**/*.war'
       junit 'target/*-reports/**/*.xml'
 
+
+
     }
 
     success {
       echo 'I succeeeded'
+      mail to: 'team@mydomain.com',
+                  subject: "success to build",
+                  body: "success to build haha!"
 
     }
 
@@ -41,7 +46,9 @@ pipeline {
 
     failure {
       echo 'I failed :('
-
+        mail to: 'team@mydomain.com',
+             subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+             body: "Something is wrong with ${env.BUILD_URL}"
     }
 
     changed {
