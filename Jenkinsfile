@@ -16,6 +16,9 @@ pipeline {
    */
    agent { docker { image 'node:7-alpine' } }
    stages {
+      stage('Build'){
+         sh 'mvn clean package'
+      }
       stage('Test') {
          environment {
             TEST_ACCOUNT=credentials('test_account');
