@@ -25,7 +25,7 @@ pipeline {
     always {
       echo 'One way or another, I have finished'
       archiveArtifacts 'target/**/*.war'
-      junit 'build/*-reports/**/*.xml'
+      junit 'target/*-reports/**/*.xml'
 
     }
 
