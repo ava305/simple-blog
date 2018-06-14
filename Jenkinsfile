@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('BuildXX') {
       steps {
         sh 'mvn clean package -Daa=33'
       }

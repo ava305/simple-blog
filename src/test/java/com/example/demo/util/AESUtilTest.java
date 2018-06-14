@@ -16,7 +16,7 @@ public class AESUtilTest {
 
         String encryedText=AESUtil.encrypt(text,"12345678");
 
-        String decryedText=AESUtil.decrypt(encryedText,"123456787");
+        String decryedText=AESUtil.decrypt(encryedText,"12345678");
 
 
         Assert.assertThat(decryedText, CoreMatchers.equalTo(text));
