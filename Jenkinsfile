@@ -12,7 +12,7 @@ pipeline {
       }
       steps {
 
-        sh 'mvn test'
+       // sh 'mvn test'
         sh 'node --version'
         sh 'echo $TEST_ACCOUNT'
         sh 'echo $TEST_ACCOUNT_USR'
@@ -25,7 +25,7 @@ pipeline {
     always {
       echo 'One way or another, I have finished'
       archiveArtifacts 'target/**/*.war'
-      junit 'build/reports/**/*.xml'
+      junit 'build/*-reports/**/*.xml'
 
     }
 
